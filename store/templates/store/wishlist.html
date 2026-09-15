@@ -1,0 +1,77 @@
+{% extends "store/base.html" %}
+
+{% block title %}
+Wishlist | CaseX
+{% endblock %}
+
+{% block content %}
+
+<div class="products">
+
+    <h1>My Wishlist</h1>
+
+    {% if wishlist_items %}
+
+        {% for item in wishlist_items %}
+
+        <div class="product-card">
+
+            <div class="product-image">
+
+                <img src="{{ item.product.image.url }}">
+
+            </div>
+
+            <div class="product-details">
+
+                <h3>{{ item.product.name }}</h3>
+
+                <h2>₹{{ item.product.price }}</h2>
+
+                <a href="{% url 'product_detail' item.product.id %}"
+                   class="buy-btn">
+
+                    View Product
+
+                </a>
+
+                <br><br>
+
+                <a href="{% url 'remove_from_wishlist' item.id %}"
+                   class="cart-btn">
+
+                    Remove
+
+                </a>
+
+            </div>
+
+        </div>
+
+        {% endfor %}
+
+    {% else %}
+
+       <div class="empty-page">
+
+    <div class="empty-icon">
+        <i class="fa-solid fa-heart"></i>
+    </div>
+
+    <h1>Your Wishlist is Empty</h1>
+
+    <p>
+        Save your favorite products here and shop them anytime.
+    </p>
+
+    <a href="{% url 'home' %}" class="empty-btn">
+        Browse Products
+    </a>
+
+</div>
+
+{% endif %}
+
+</div>
+
+{% endblock %}

@@ -1,0 +1,50 @@
+{% extends "store/base.html" %}
+
+{% block title %}Login | CaseX{% endblock %}
+
+{% block content %}
+
+<div class="auth-container">
+
+    <div class="auth-box">
+
+        <h1>Welcome Back</h1>
+
+        <p>Login to your CaseX account.</p>
+
+        <form method="POST">
+
+            {% csrf_token %} 
+
+            <input type="hidden" name="next" value="{{ request.GET.next }}">
+            
+            <input
+                type="text"
+                name="username"
+                placeholder="Username"
+                required>
+
+            <input
+                type="password"
+                name="password"
+                placeholder="Password"
+                required>
+
+            <button type="submit">
+                Login
+            </button>
+
+        </form>
+
+        <p>
+            Don't have an account?
+            <a href="{% url 'signup' %}">
+                Create one
+            </a>
+        </p>
+
+    </div>
+
+</div>
+
+{% endblock %}

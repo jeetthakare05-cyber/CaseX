@@ -1,0 +1,57 @@
+{% extends "store/base.html" %}
+
+{% block title %}Suggestions{% endblock %}
+
+{% block content %}
+
+<div class="info-page">
+
+    <div class="info-card">
+
+        <i class="fa-solid fa-comments page-icon"></i>
+
+        <h1>Suggestions</h1>
+
+        <p>
+
+            We'd love to hear your ideas.
+
+            Tell us how we can improve CaseX.
+
+        </p>
+
+        <form method="POST">
+
+            {% csrf_token %}
+
+            <input
+                type="text"
+                name="name"
+                placeholder="Your Name"
+                required>
+
+            <input
+                type="email"
+                name="email"
+                placeholder="Email Address"
+                required>
+
+            <textarea
+                name="message"
+                rows="6"
+                placeholder="Write your suggestion..."
+                required></textarea>
+
+            <button type="submit">
+
+                Send Suggestion
+
+            </button>
+
+        </form>
+
+    </div>
+
+</div>
+
+{% endblock %}

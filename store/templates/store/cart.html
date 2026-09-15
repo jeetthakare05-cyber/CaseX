@@ -1,0 +1,131 @@
+{% extends 'store/base.html' %}
+
+{% block title %}
+Shopping Cart | CoverX
+{% endblock %}
+
+{% block content %}
+
+<div class="cart-container">
+
+<h1>Shopping Cart</h1>
+
+{% if cart_items %}
+
+<table class="cart-table">
+
+    <tr>
+        <th>Image</th>
+        <th>Product</th>
+        <th>Price</th>
+        <th>Quantity</th>
+        <th>Total</th>
+        <th>Action</th>
+    </tr>
+
+    {% for item in cart_items %}
+
+    <tr>
+
+        <td>
+            <img src="{{ item.product.image.url }}" width="80">
+        </td>
+
+        <td>
+            {{ item.product.name }}
+        </td>
+
+        <td>
+            ₹{{ item.product.price }}
+        </td>
+
+        <td>
+
+            <a href="{% url 'decrease_quantity' item.id %}">
+                <button class="quantity-btn">-</button>
+            </a>
+
+            {{ item.quantity }}
+
+            <a href="{% url 'increase_quantity' item.id %}">
+                <button class="quantity-btn">+</button>
+            </a>
+
+        </td>
+
+        <td>
+            ₹{{ item.total_price }}
+        </td>
+
+        <td>
+            <a href="{% url 'remove_from_cart' item.id %}">
+                <button class="remove-btn">Remove</button>
+            </a>
+        </td>
+
+    </tr>
+
+    {% endfor %}
+
+</table>
+
+<div class="summary-card">
+
+    <h2>Order Summary</h2>
+
+    <div class="summary-row">
+        <span>Subtotal</span>
+        <span>₹{{ grand_total }}</span>
+    </div>
+
+    <div class="summary-row">
+        <span>Shipping</span>
+        <span>FREE</span>
+    </div>
+
+    <hr>
+
+    <div class="summary-row grand-total">
+        <span>Total</span>
+        <span>₹{{ grand_total }}</span>
+    </div>
+
+    <div class="cart-buttons">
+
+        <a href="{% url 'home' %}" class="continue-btn">
+            Continue Shopping
+        </a>
+
+        <a href="{% url 'checkout' %}" class="checkout-btn">
+            Proceed to Checkout
+        </a>
+
+    </div>
+
+</div>
+
+{% else %}
+
+<div class="empty-page">
+
+    <div class="empty-icon">
+        <i class="fa-solid fa-cart-shopping"></i>
+    </div>
+
+    <h1>Your Cart is Empty</h1>
+
+    <p>
+        Looks like you haven't added any products yet.
+    </p>
+
+    <a href="{% url 'home' %}" class="empty-btn">
+        Continue Shopping
+    </a>
+
+</div>
+
+{% endif %}
+
+</div>
+
+{% endblock %}
