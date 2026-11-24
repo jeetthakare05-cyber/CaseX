@@ -10,8 +10,9 @@ class Product(models.Model):
     description = models.TextField()
     image = models.ImageField(
     upload_to="products/",
-    storage=CloudinaryStorage()
-    )
+    storage=CloudinaryStorage(),
+    max_length=500
+)
     stock = models.PositiveIntegerField(default=0)
     is_available = models.BooleanField(default=True)
     created_at = models.DateTimeField(auto_now_add=True)
