@@ -8,9 +8,9 @@ class Command(BaseCommand):
     def handle(self, *args, **options):
 
         image_updates = {
-            "Iphone 17 pro max": "https://res.cloudinary.com/ljqsb2vj/image/upload/v1795521248/Zootopia__jpu0t4.jpg",
+            "phone 17 pro max": "https://res.cloudinary.com/ljqsb2vj/image/upload/v1795521248/Zootopia__jpu0t4.jpg",
 
-            "Woven Macbook Case": "https://res.cloudinary.com/ljqsb2vj/image/upload/v1795521248/Woven_MacBook_Case_-_MacBook_Pro_14_M1_M2_M3_M4_M5_lnqfrx.jpg",
+            "Woven Macbook Case (M1/M2/M3/M4/M5)": "https://res.cloudinary.com/ljqsb2vj/image/upload/v1795521248/Woven_MacBook_Case_-_MacBook_Pro_14_M1_M2_M3_M4_M5_lnqfrx.jpg",
 
             "Iphone 16 Pro": "https://res.cloudinary.com/ljqsb2vj/image/upload/v1795521248/zoro_jxbi4o.jpg",
 
@@ -30,7 +30,7 @@ class Command(BaseCommand):
 
             "Iphone 16": "https://res.cloudinary.com/ljqsb2vj/image/upload/v1795521245/download_2_ubbin5.jpg",
 
-            "Airpods Pro": "https://res.cloudinary.com/ljqsb2vj/image/upload/v1795521245/AirPods_Pro_wqqbt8.jpg",
+            "Airpods pro": "https://res.cloudinary.com/ljqsb2vj/image/upload/v1795521245/AirPods_Pro_wqqbt8.jpg",
 
             "Iphone 17 Pro Max": "https://res.cloudinary.com/ljqsb2vj/image/upload/v1795521245/Coque_magn%C3%A9tique_en_Pevlar_pour_iPhone_17_Air_16_Plus_15_n4mb1o.jpg",
 
@@ -42,7 +42,7 @@ class Command(BaseCommand):
         for product_name, image_url in image_updates.items():
 
             try:
-                product = Product.objects.get(name=product_name)
+                product = Product.objects.filter(name__iexact=product_name).first()
 
                 product.image = image_url
                 product.save(update_fields=["image"])
