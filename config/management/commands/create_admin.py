@@ -1,21 +1,32 @@
 import os
+from django.core.management.base import BaseCommand
 from django.contrib.auth import get_user_model
 
-User = get_user_model()
 
-username = os.environ.get("ADMIN_USERNAME")
-email = os.environ.get("ADMIN_EMAIL")
-password = os.environ.get("ADMIN_PASSWORD")
+class Command(BaseCommand):
+    help = "Create admin account if it does not exist"
 
-if username and email and password:
-    if not User.objects.filter(username=username).exists():
+    def handle(self, *args, **options):
+        User = get_user_model()
+
+        username = os.environ.get("ADMIN_USERNAME")
+        email = os.environ.get("ADMIN_EMAIL")
+        password = os.environ.get("ADMIN_PASSWORD")
+
+        if not username or not email or not password:
+            self.stdout.write("Admin environment variables not configured.")
+            return
+
+        if User.objects.filter(username=username).exists():
+            self.stdout.write("Admin account already exists.")
+            return
+
         User.objects.create_superuser(
             username=username,
             email=email,
             password=password
         )
-        print("Admin account created successfully!")
-    else:
-        print("Admin account already exists.")
-else:
-    print("Admin environment variables not configured.")
+
+        self.stdout.write(
+            self.style.SUCCESS("Admin account created successfully!")
+        )
