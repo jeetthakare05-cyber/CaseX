@@ -35,6 +35,8 @@ class Command(BaseCommand):
             "Iphone 17 Pro Max": "https://res.cloudinary.com/ljqsb2vj/image/upload/v1795521245/Coque_magn%C3%A9tique_en_Pevlar_pour_iPhone_17_Air_16_Plus_15_n4mb1o.jpg",
 
             "Iphone 15": "https://res.cloudinary.com/ljqsb2vj/image/upload/v1795521245/Capinha_Iphone_j9xzuh.jpg",
+
+            "Iphone 17 pro max": "https://res.cloudinary.com/ljqsb2vj/image/upload/v1795521245/download_1_skwh8w.jpg"
         }
 
         updated_count = 0
