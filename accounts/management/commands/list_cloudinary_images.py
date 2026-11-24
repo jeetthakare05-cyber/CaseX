@@ -8,10 +8,9 @@ class Command(BaseCommand):
     def handle(self, *args, **options):
 
         result = cloudinary.api.resources(
-            type="upload",
-            prefix="casex/",
-            max_results=100
-        )
+    type="upload",
+    max_results=100
+)
 
         assets = result.get("resources", [])
 
