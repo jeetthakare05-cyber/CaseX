@@ -13,6 +13,8 @@ https://docs.djangoproject.com/en/6.0/ref/settings/
 from pathlib import Path
 import os
 import dj_database_url
+import cloudinary
+import cloudinary.uploader
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
@@ -37,8 +39,7 @@ ALLOWED_HOSTS = [
 # Application definition
 
 INSTALLED_APPS = [
-    'cloudinary_storage',
-    'cloudinary',
+    
 
     'django.contrib.admin',
     'django.contrib.auth',
@@ -139,7 +140,7 @@ STATICFILES_DIRS = [
 
 STORAGES = {
     "default": {
-        "BACKEND": "cloudinary_storage.storage.MediaCloudinaryStorage",
+        "BACKEND": "django.core.files.storage.FileSystemStorage",
     },
     "staticfiles": {
         "BACKEND": "whitenoise.storage.CompressedStaticFilesStorage",
@@ -148,11 +149,8 @@ STORAGES = {
 STATICFILES_STORAGE = "whitenoise.storage.CompressedStaticFilesStorage"
 
 
-CLOUDINARY_STORAGE = {
-    'CLOUD_NAME': os.environ.get('CLOUDINARY_CLOUD_NAME'),
-    'API_KEY': os.environ.get('CLOUDINARY_API_KEY'),
-    'API_SECRET': os.environ.get('CLOUDINARY_API_SECRET'),
-}
+
+
 
 MEDIA_URL = "/media/"
 MEDIA_ROOT = BASE_DIR / "media"
@@ -162,3 +160,11 @@ DEFAULT_AUTO_FIELD = "django.db.models.BigAutoField"
 LOGIN_URL = "login"
 LOGIN_REDIRECT_URL = "home"
 LOGOUT_REDIRECT_URL = "home"
+
+# Cloudinary configuration
+cloudinary.config(
+    cloud_name=os.environ.get('CLOUDINARY_CLOUD_NAME'),
+    api_key=os.environ.get('CLOUDINARY_API_KEY'),
+    api_secret=os.environ.get('CLOUDINARY_API_SECRET'),
+    secure=True,
+)
