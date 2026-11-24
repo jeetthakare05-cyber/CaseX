@@ -1,0 +1,198 @@
+[
+  {
+    "model": "store.product",
+    "pk": 1,
+    "fields": {
+      "name": "Airpods pro",
+      "brand": "Apple",
+      "price": "599.00",
+      "description": "Simple and elegant Airpods cover",
+      "image": "products/AirPods_Pro.jpg",
+      "stock": 25,
+      "is_available": true,
+      "created_at": "2026-07-13T15:03:15.993Z"
+    }
+  },
+  {
+    "model": "store.product",
+    "pk": 2,
+    "fields": {
+      "name": "Iphone 17 pro max",
+      "brand": "Apple",
+      "price": "399.00",
+      "description": "White colored silicon case with blue flower design.\r\nDurable\r\nSilicon Materia",
+      "image": "products/download_1.jpg",
+      "stock": 20,
+      "is_available": true,
+      "created_at": "2026-07-13T15:05:22.308Z"
+    }
+  },
+  {
+    "model": "store.product",
+    "pk": 3,
+    "fields": {
+      "name": "Iphone 17 pro",
+      "brand": "Apple",
+      "price": "399.00",
+      "description": "silicon case with a cat design",
+      "image": "products/wanna_escape_.jpg",
+      "stock": 10,
+      "is_available": true,
+      "created_at": "2026-07-13T15:06:28.944Z"
+    }
+  },
+  {
+    "model": "store.product",
+    "pk": 4,
+    "fields": {
+      "name": "Airpods Case",
+      "brand": "Apple",
+      "price": "699.00",
+      "description": "Limited Edition Spiderman Case",
+      "image": "products/download_3.jpg",
+      "stock": 5,
+      "is_available": true,
+      "created_at": "2026-07-13T15:07:11.302Z"
+    }
+  },
+  {
+    "model": "store.product",
+    "pk": 5,
+    "fields": {
+      "name": "Iphone 14",
+      "brand": "Apple",
+      "price": "399.00",
+      "description": "Couple friendly cases for Iphone 14",
+      "image": "products/Simple_Sun_Moon_Phone_Case_For_iPhone_14_Plus_7_8_X_XS_XR_11_12_13_Pro_Max_Sili_tTDnKTq.jpg",
+      "stock": 30,
+      "is_available": true,
+      "created_at": "2026-07-13T15:08:07.403Z"
+    }
+  },
+  {
+    "model": "store.product",
+    "pk": 6,
+    "fields": {
+      "name": "phone 17 pro max",
+      "brand": "Apple",
+      "price": "499.00",
+      "description": "Zootopia couple phone case for Iphone",
+      "image": "products/Zootopia_.jpg",
+      "stock": 15,
+      "is_available": true,
+      "created_at": "2026-07-13T15:08:50.512Z"
+    }
+  },
+  {
+    "model": "store.product",
+    "pk": 7,
+    "fields": {
+      "name": "Iphone 15",
+      "brand": "Apple",
+      "price": "450.00",
+      "description": "Porsche Themed Iphone Covers",
+      "image": "products/iphone_15_back_cover_sticker___Porsche_iphone_case.jpg",
+      "stock": 20,
+      "is_available": true,
+      "created_at": "2026-07-13T15:09:39.999Z"
+    }
+  },
+  {
+    "model": "store.product",
+    "pk": 8,
+    "fields": {
+      "name": "Iphone 16",
+      "brand": "Apple",
+      "price": "389.00",
+      "description": "Silicon , Durable and shock proof PhoneCase",
+      "image": "products/iphone_16_pro_desert_.jpg",
+      "stock": 27,
+      "is_available": true,
+      "created_at": "2026-07-13T15:10:41.445Z"
+    }
+  },
+  {
+    "model": "store.product",
+    "pk": 9,
+    "fields": {
+      "name": "Airpods",
+      "brand": "Apple",
+      "price": "699.00",
+      "description": "AirPods case , Limited Edition Akatsuki(Naruro) Edition",
+      "image": "products/Airpods_pro_cases.jpg",
+      "stock": 4,
+      "is_available": true,
+      "created_at": "2026-07-13T15:11:31.716Z"
+    }
+  },
+  {
+    "model": "store.product",
+    "pk": 10,
+    "fields": {
+      "name": "Iphone 15",
+      "brand": "Apple",
+      "price": "600.00",
+      "description": "Porsche Logo with Silicon Material and detailed edition",
+      "image": "products/Capinha_Iphone.jpg",
+      "stock": 10,
+      "is_available": true,
+      "created_at": "2026-07-13T15:12:30.478Z"
+    }
+  },
+  {
+    "model": "store.product",
+    "pk": 11,
+    "fields": {
+      "name": "Iphone 16",
+      "brand": "Apple",
+      "price": "499.00",
+      "description": "How to Train Your Dragon Themed Couple phone case",
+      "image": "products/download_2.jpg",
+      "stock": 30,
+      "is_available": true,
+      "created_at": "2026-07-13T15:13:22.552Z"
+    }
+  },
+  {
+    "model": "store.product",
+    "pk": 12,
+    "fields": {
+      "name": "Iphone 17 Pro Max",
+      "brand": "Apple",
+      "price": "499.00",
+      "description": "Samurai era waves in manga themed",
+      "image": "products/Coque_magn\u00e9tique_en_Pevlar_pour_iPhone_17_Air_16_Plus_15.jpg",
+      "stock": 20,
+      "is_available": true,
+      "created_at": "2026-07-13T15:14:15.735Z"
+    }
+  },
+  {
+    "model": "store.product",
+    "pk": 13,
+    "fields": {
+      "name": "Iphone 16 Pro",
+      "brand": "Apple",
+      "price": "399.00",
+      "description": "Roronoa Zoro Themed with Silicon Material and Shock Proof",
+      "image": "products/zoro.jpg",
+      "stock": 40,
+      "is_available": true,
+      "created_at": "2026-07-13T15:15:02.950Z"
+    }
+  },
+  {
+    "model": "store.product",
+    "pk": 14,
+    "fields": {
+      "name": "Woven Macbook Case (M1/M2/M3/M4/M5)",
+      "brand": "Apple",
+      "price": "5000.00",
+      "description": "Chic, simple, and highly protective, ourWovenMacBook Cases are constructed from a dense polycarbonate for maximum durability, andwrapped in a premium leatherettematerial for a luxurious look and feel.\r\nGet a matchingiPhone Case here.\r\nProtection:360 degree outer protection with access to all device ports. Vented base to maintain optimal device cooling.\r\nQuality: Craftedfrom durable rubberized plastic for maximum protection from drops, bumps, scratches and scrapes.\r\nDesign: Two-piece design that snaps on and off your MacBook.Apple cut out allows logo to shine through. Design does not interfere with device opening/closing.\r\nTexture is on the top, the bottomhas a matte transparent finish.\r\n(THE iPHONE CASE IS INCLUDED WITH THIS PRICE)",
+      "image": "products/Woven_MacBook_Case_-_MacBook_Pro_14_M1_M2_M3_M4_M5.jpg",
+      "stock": 20,
+      "is_available": true,
+      "created_at": "2026-08-04T13:43:52.817Z"
+    }
+  }
+]
