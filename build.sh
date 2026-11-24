@@ -6,5 +6,4 @@ python manage.py migrate
 python manage.py collectstatic --noinput
 python manage.py create_admin
 python manage.py import_products
-python manage.py list_cloudinary_images
 python manage.py update_product_images
