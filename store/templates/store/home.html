@@ -19,11 +19,11 @@ Home | CoverX
 
 <section class="search-area">
 
-  <form method="GET" action="">
+  <form method="GET" action="{% url 'home' %}">
     <input
         type="text"
         name="q"
-        value="{{ query }}"
+        value="{% if query %}{{ query }}{% endif %}"
         placeholder="Search for phone covers..."
     >
 </form>

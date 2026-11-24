@@ -1,47 +1,163 @@
 {% extends "store/base.html" %}
 
-{% block title %}Login | CaseX{% endblock %}
+{% block title %}
+Login | CaseX
+{% endblock %}
 
 {% block content %}
 
-<div class="auth-container">
+<div class="login-page">
 
-    <div class="auth-box">
+    <div class="login-card">
 
-        <h1>Welcome Back</h1>
+        <!-- LEFT BRANDING SECTION -->
 
-        <p>Login to your CaseX account.</p>
+        <div class="login-brand">
 
-        <form method="POST">
+            <div class="brand-icon">
+                <i class="fa-solid fa-mobile-screen-button"></i>
+            </div>
 
-            {% csrf_token %} 
+            <h1>CaseX</h1>
 
-            <input type="hidden" name="next" value="{{ request.GET.next }}">
-            
-            <input
-                type="text"
-                name="username"
-                placeholder="Username"
-                required>
+            <h2>Welcome Back!</h2>
 
-            <input
-                type="password"
-                name="password"
-                placeholder="Password"
-                required>
+            <p>
+                Login to your account and continue exploring
+                premium phone cases designed for your style.
+            </p>
 
-            <button type="submit">
-                Login
-            </button>
+            <div class="brand-feature">
 
-        </form>
+                <div>
+                    <i class="fa-solid fa-shield-halved"></i>
+                    <span>Premium Protection</span>
+                </div>
 
-        <p>
-            Don't have an account?
-            <a href="{% url 'signup' %}">
-                Create one
+                <div>
+                    <i class="fa-solid fa-heart"></i>
+                    <span>Cases You'll Love</span>
+                </div>
+
+                <div>
+                    <i class="fa-solid fa-cart-shopping"></i>
+                    <span>Easy Shopping</span>
+                </div>
+
+            </div>
+
+        </div>
+
+
+        <!-- RIGHT LOGIN SECTION -->
+
+        <div class="login-form-section">
+
+            <div class="login-heading">
+
+                <span class="login-label">
+                    ACCOUNT LOGIN
+                </span>
+
+                <h2>Sign in to CaseX</h2>
+
+                <p>
+                    Enter your details below to continue.
+                </p>
+
+            </div>
+
+
+            <form method="POST" class="login-form">
+
+                {% csrf_token %}
+
+                <input
+                    type="hidden"
+                    name="next"
+                    value="{{ request.GET.next }}">
+
+
+                <div class="form-group">
+
+                    <label for="username">
+                        Username
+                    </label>
+
+                    <div class="input-box">
+
+                        <i class="fa-regular fa-user"></i>
+
+                        <input
+                            type="text"
+                            id="username"
+                            name="username"
+                            placeholder="Enter your username"
+                            required>
+
+                    </div>
+
+                </div>
+
+
+                <div class="form-group">
+
+                    <label for="password">
+                        Password
+                    </label>
+
+                    <div class="input-box">
+
+                        <i class="fa-solid fa-lock"></i>
+
+                        <input
+                            type="password"
+                            id="password"
+                            name="password"
+                            placeholder="Enter your password"
+                            required>
+
+                    </div>
+
+                </div>
+
+
+                <button type="submit" class="login-button">
+
+                    <span>Login to Account</span>
+
+                    <i class="fa-solid fa-arrow-right"></i>
+
+                </button>
+
+            </form>
+
+
+            <div class="login-divider">
+
+                <span>New to CaseX?</span>
+
+            </div>
+
+
+            <a href="{% url 'signup' %}" class="signup-link">
+
+                Create a New Account
+
+                <i class="fa-solid fa-user-plus"></i>
+
             </a>
-        </p>
+
+
+            <p class="login-note">
+
+                <i class="fa-solid fa-shield-halved"></i>
+
+                Your account information is securely handled.
+
+            </p>
+
+        </div>
 
     </div>
 

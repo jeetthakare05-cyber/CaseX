@@ -1,52 +1,204 @@
 {% extends "store/base.html" %}
 
-{% block title %}My Orders | CaseX{% endblock %}
+{% block title %}
+My Orders | CaseX
+{% endblock %}
 
 {% block content %}
 
-<div class="orders-container">
+<div class="orders-page">
 
-    <h1>My Orders</h1>
+    <!-- Page Header -->
+    <div class="orders-header">
+
+        <div>
+            <span class="orders-label">
+                <i class="fa-solid fa-box"></i>
+                ORDER HISTORY
+            </span>
+
+            <h1>My Orders</h1>
+
+            <p>
+                View and track all your CaseX orders in one place.
+            </p>
+        </div>
+
+        <a href="{% url 'home' %}" class="orders-shop-btn">
+            <i class="fa-solid fa-bag-shopping"></i>
+            Continue Shopping
+        </a>
+
+    </div>
+
 
     {% if orders %}
+
+    <!-- Orders List -->
+    <div class="orders-list">
 
         {% for order in orders %}
 
         <div class="order-card">
 
-            <h3>Order #{{ order.id }}</h3>
+            <!-- Order Top -->
+            <div class="order-top">
 
-            <p><strong>Total:</strong> ₹{{ order.total_price }}</p>
+                <div class="order-number">
 
-            <p><strong>Status:</strong> {{ order.status }}</p>
+                    <span class="order-icon">
+                        <i class="fa-solid fa-receipt"></i>
+                    </span>
 
-            <p><strong>Date:</strong> {{ order.created_at }}</p>
+                    <div>
+                        <span class="small-label">
+                            ORDER
+                        </span>
+
+                        <h2>#{{ order.id }}</h2>
+                    </div>
+
+                </div>
+
+
+                <div class="order-status">
+
+                    {% if order.status == "Delivered" %}
+
+                        <span class="status delivered">
+                            <i class="fa-solid fa-circle-check"></i>
+                            Delivered
+                        </span>
+
+                    {% elif order.status == "Shipped" %}
+
+                        <span class="status shipped">
+                            <i class="fa-solid fa-truck"></i>
+                            Shipped
+                        </span>
+
+                    {% else %}
+
+                        <span class="order-status order-confirmed">
+    <i class="fa-solid fa-circle-check"></i>
+    Order Placed
+</span>
+
+                    {% endif %}
+
+                </div>
+
+            </div>
+
+
+            <!-- Divider -->
+            <div class="order-divider"></div>
+
+
+            <!-- Order Information -->
+            <div class="order-info">
+
+                <div class="order-info-item">
+
+                    <i class="fa-regular fa-calendar"></i>
+
+                    <div>
+                        <span>Date</span>
+                        <strong>
+                            {{ order.created_at|date:"d M Y" }}
+                        </strong>
+                    </div>
+
+                </div>
+
+
+                <div class="order-info-item">
+
+                    <i class="fa-solid fa-clock"></i>
+
+                    <div>
+                        <span>Time</span>
+                        <strong>
+                            {{ order.created_at|date:"g:i A" }}
+                        </strong>
+                    </div>
+
+                </div>
+
+
+                <div class="order-info-item">
+
+                    <i class="fa-solid fa-indian-rupee-sign"></i>
+
+                    <div>
+                        <span>Total Amount</span>
+                        <strong class="order-price">
+                            ₹{{ order.total_price }}
+                        </strong>
+                    </div>
+
+                </div>
+
+            </div>
+
+
+            <!-- Bottom -->
+            <div class="order-bottom">
+
+                <div class="order-message">
+
+                    {% if order.status == "Delivered" %}
+
+                        <i class="fa-solid fa-circle-check"></i>
+                        Your order has been delivered successfully.
+
+                    {% elif order.status == "Shipped" %}
+
+                        <i class="fa-solid fa-truck"></i>
+                        Your order is on its way.
+
+                    {% else %}
+
+                       <i class="fa-solid fa-circle-check"></i>
+    Your order has been placed successfully.
+
+                    {% endif %}
+
+                </div>
+
+            </div>
 
         </div>
 
         {% endfor %}
 
-    {% else %}
-
-     <div class="empty-page">
-
-    <div class="empty-icon">
-        <i class="fa-solid fa-box-open"></i>
     </div>
 
-    <h1>No Orders Yet</h1>
 
-    <p>
-        Once you place your first order, it will appear here so you can easily track your purchases.
-    </p>
+    {% else %}
 
-    <a href="{% url 'home' %}" class="empty-btn">
-        Start Shopping
-    </a>
+    <!-- Empty Orders -->
+    <div class="empty-orders">
 
-</div>
+        <div class="empty-orders-icon">
+            <i class="fa-solid fa-box-open"></i>
+        </div>
 
-{% endif %}
+        <h2>No Orders Yet</h2>
+
+        <p>
+            You haven't placed any orders with CaseX yet.
+            Start shopping and your orders will appear here.
+        </p>
+
+        <a href="{% url 'home' %}" class="start-shopping-btn">
+            <i class="fa-solid fa-bag-shopping"></i>
+            Start Shopping
+        </a>
+
+    </div>
+
+    {% endif %}
 
 </div>
 

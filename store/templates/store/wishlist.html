@@ -1,48 +1,97 @@
 {% extends "store/base.html" %}
 
 {% block title %}
-Wishlist | CaseX
+My Wishlist | CaseX
 {% endblock %}
 
 {% block content %}
 
-<div class="products">
+<div class="wishlist-page">
 
-    <h1>My Wishlist</h1>
+    <!-- Wishlist Header -->
+    <div class="wishlist-header">
+
+        <div>
+            <span class="wishlist-label">
+                <i class="fa-solid fa-heart"></i>
+                MY COLLECTION
+            </span>
+
+            <h1>My Wishlist</h1>
+
+            <p>
+                Products you've saved for later.
+            </p>
+        </div>
+
+    </div>
+
 
     {% if wishlist_items %}
 
+    <!-- Wishlist Products -->
+
+    <div class="wishlist-grid">
+
         {% for item in wishlist_items %}
 
-        <div class="product-card">
+        <div class="wishlist-card">
 
-            <div class="product-image">
+            <!-- Product Image -->
 
-                <img src="{{ item.product.image.url }}">
+            <div class="wishlist-image">
+
+                <img
+                    src="{{ item.product.image.url }}"
+                    alt="{{ item.product.name }}"
+                >
+
+                <div class="wishlist-heart">
+                    <i class="fa-solid fa-heart"></i>
+                </div>
 
             </div>
 
-            <div class="product-details">
 
-                <h3>{{ item.product.name }}</h3>
+            <!-- Product Information -->
 
-                <h2>₹{{ item.product.price }}</h2>
+            <div class="wishlist-info">
 
-                <a href="{% url 'product_detail' item.product.id %}"
-                   class="buy-btn">
+                <p class="wishlist-brand">
+                    {{ item.product.brand }}
+                </p>
 
-                    View Product
+                <h2>
+                    {{ item.product.name }}
+                </h2>
 
-                </a>
+                <div class="wishlist-price">
+                    ₹{{ item.product.price }}
+                </div>
 
-                <br><br>
 
-                <a href="{% url 'remove_from_wishlist' item.id %}"
-                   class="cart-btn">
+                <!-- Buttons -->
 
-                    Remove
+                <div class="wishlist-actions">
 
-                </a>
+                    <a
+                        href="{% url 'product_detail' item.product.id %}"
+                        class="wishlist-view-btn"
+                    >
+                        <i class="fa-solid fa-eye"></i>
+                        View Product
+                    </a>
+
+
+                    <a
+                        href="{% url 'remove_from_wishlist' item.id %}"
+                        class="wishlist-remove-btn"
+                    >
+                        <i class="fa-solid fa-trash"></i>
+                        Remove
+                    </a>
+
+                </div>
 
             </div>
 
@@ -50,27 +99,33 @@ Wishlist | CaseX
 
         {% endfor %}
 
-    {% else %}
-
-       <div class="empty-page">
-
-    <div class="empty-icon">
-        <i class="fa-solid fa-heart"></i>
     </div>
 
-    <h1>Your Wishlist is Empty</h1>
 
-    <p>
-        Save your favorite products here and shop them anytime.
-    </p>
+    {% else %}
 
-    <a href="{% url 'home' %}" class="empty-btn">
-        Browse Products
-    </a>
+    <!-- Empty Wishlist -->
 
-</div>
+    <div class="empty-page wishlist-empty">
 
-{% endif %}
+        <div class="empty-icon">
+            <i class="fa-regular fa-heart"></i>
+        </div>
+
+        <h2>Your Wishlist is Empty</h2>
+
+        <p>
+            Save products you love and find them here later.
+        </p>
+
+        <a href="{% url 'home' %}" class="empty-btn">
+            <i class="fa-solid fa-bag-shopping"></i>
+            Continue Shopping
+        </a>
+
+    </div>
+
+    {% endif %}
 
 </div>
 

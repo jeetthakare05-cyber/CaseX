@@ -674,20 +674,7 @@ body{
 
 }
 
-.cart-btn,
-.buy-btn{
 
-    padding:15px 30px;
-
-    border:none;
-
-    border-radius:10px;
-
-    cursor:pointer;
-
-    font-size:18px;
-
-}
 
 
 
@@ -1074,29 +1061,19 @@ body{
     transition:.3s;
 
 }
-.cart-btn,
-.buy-btn{
 
-    flex:1;
-    text-align:center;
-    text-decoration:none;
-    padding:12px;
-    border-radius:10px;
-    font-weight:600;
-    transition:.3s;
-}
 
 .cart-btn{
 
-    background:#111827;
+    background:#e26218;
 
-    color:white;
+    color:rgb(255, 255, 255);
 
 }
 
 .cart-btn:hover{
 
-    background:black;
+    background:rgb(19, 18, 18);
 
 }
 
@@ -2221,5 +2198,1375 @@ body{
 .star-rating input:checked ~ label{
 
     color:#fbbf24;
+
+}
+
+
+/* =========================================================
+   CASEX LOGIN PAGE
+   ========================================================= */
+
+.login-page {
+    min-height: calc(100vh - 80px);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 60px 25px;
+    background: #f5f6f8;
+}
+
+
+/* MAIN LOGIN CARD */
+
+.login-card {
+    width: 900px;
+    max-width: 100%;
+    min-height: 540px;
+
+    display: grid;
+    grid-template-columns: 42% 58%;
+
+    background: white;
+
+    border-radius: 22px;
+
+    overflow: hidden;
+
+    box-shadow:
+        0 20px 60px rgba(15, 23, 42, 0.12);
+}
+
+
+/* =========================================================
+   LEFT BRANDING
+   ========================================================= */
+
+.login-brand {
+    position: relative;
+
+    padding: 55px 42px;
+
+    background: #101827;
+
+    color: white;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+
+    overflow: hidden;
+}
+
+
+/* Decorative circle */
+
+.login-brand::before {
+    content: "";
+
+    position: absolute;
+
+    width: 240px;
+    height: 240px;
+
+    border-radius: 50%;
+
+    background: rgba(255, 255, 255, 0.04);
+
+    top: -90px;
+    right: -80px;
+}
+
+
+/* Second decorative circle */
+
+.login-brand::after {
+    content: "";
+
+    position: absolute;
+
+    width: 180px;
+    height: 180px;
+
+    border-radius: 50%;
+
+    background: rgba(239, 68, 68, 0.08);
+
+    bottom: -70px;
+    left: -70px;
+}
+
+
+/* Brand icon */
+
+.brand-icon {
+    width: 58px;
+    height: 58px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    background: #ef4444;
+
+    border-radius: 15px;
+
+    font-size: 24px;
+
+    margin-bottom: 22px;
+
+    box-shadow:
+        0 10px 25px rgba(239, 68, 68, 0.25);
+}
+
+
+.login-brand h1 {
+    font-size: 36px;
+
+    margin: 0 0 25px;
+
+    letter-spacing: -1px;
+}
+
+
+.login-brand h2 {
+    font-size: 25px;
+
+    margin: 0 0 14px;
+
+    color: white;
+}
+
+
+.login-brand > p {
+    color: #cbd5e1;
+
+    font-size: 15px;
+
+    line-height: 1.7;
+
+    margin-bottom: 35px;
+
+    max-width: 330px;
+}
+
+
+/* Features */
+
+.brand-feature {
+    display: flex;
+
+    flex-direction: column;
+
+    gap: 17px;
+}
+
+
+.brand-feature div {
+    display: flex;
+
+    align-items: center;
+
+    gap: 13px;
+
+    color: #e2e8f0;
+
+    font-size: 14px;
+}
+
+
+.brand-feature i {
+    width: 32px;
+    height: 32px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    background: rgba(255, 255, 255, 0.08);
+
+    border-radius: 9px;
+
+    color: #ef4444;
+}
+
+
+/* =========================================================
+   RIGHT LOGIN SECTION
+   ========================================================= */
+
+.login-form-section {
+    padding: 55px 60px;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+
+.login-heading {
+    margin-bottom: 32px;
+}
+
+
+.login-label {
+    display: inline-block;
+
+    color: #ef4444;
+
+    font-size: 11px;
+
+    font-weight: 700;
+
+    letter-spacing: 1.5px;
+
+    margin-bottom: 10px;
+}
+
+
+.login-heading h2 {
+    margin: 0 0 8px;
+
+    font-size: 30px;
+
+    color: #101827;
+}
+
+
+.login-heading p {
+    margin: 0;
+
+    color: #64748b;
+
+    font-size: 14px;
+}
+
+
+/* =========================================================
+   FORM
+   ========================================================= */
+
+.login-form {
+    display: flex;
+
+    flex-direction: column;
+
+    gap: 21px;
+}
+
+
+.form-group {
+    display: flex;
+
+    flex-direction: column;
+
+    gap: 8px;
+}
+
+
+.form-group label {
+    font-size: 13px;
+
+    font-weight: 600;
+
+    color: #334155;
+}
+
+
+.input-box {
+    height: 50px;
+
+    display: flex;
+
+    align-items: center;
+
+    gap: 12px;
+
+    padding: 0 15px;
+
+    border: 1px solid #dce1e7;
+
+    border-radius: 11px;
+
+    background: #fafafa;
+
+    transition: all 0.25s ease;
+}
+
+
+.input-box i {
+    color: #94a3b8;
+
+    font-size: 15px;
+
+    transition: color 0.25s ease;
+}
+
+
+.input-box input {
+    width: 100%;
+
+    height: 100%;
+
+    border: none;
+
+    outline: none;
+
+    background: transparent;
+
+    font-size: 14px;
+
+    color: #101827;
+}
+
+
+.input-box input::placeholder {
+    color: #a1aab5;
+}
+
+
+/* Input focus */
+
+.input-box:focus-within {
+    border-color: #101827;
+
+    background: white;
+
+    box-shadow:
+        0 0 0 3px rgba(16, 24, 39, 0.06);
+}
+
+
+.input-box:focus-within i {
+    color: #ef4444;
+}
+
+
+/* =========================================================
+   LOGIN BUTTON
+   ========================================================= */
+
+.login-button {
+    width: 100%;
+
+    height: 52px;
+
+    border: none;
+
+    border-radius: 11px;
+
+    background: #101827;
+
+    color: white;
+
+    font-size: 14px;
+
+    font-weight: 600;
+
+    cursor: pointer;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    gap: 12px;
+
+    transition: all 0.25s ease;
+
+    margin-top: 5px;
+}
+
+
+.login-button:hover {
+    background: #ef4444;
+
+    transform: translateY(-2px);
+
+    box-shadow:
+        0 10px 25px rgba(239, 68, 68, 0.20);
+}
+
+
+.login-button i {
+    transition: transform 0.25s ease;
+}
+
+
+.login-button:hover i {
+    transform: translateX(4px);
+}
+
+
+/* =========================================================
+   SIGNUP
+   ========================================================= */
+
+.login-divider {
+    display: flex;
+
+    align-items: center;
+
+    gap: 15px;
+
+    margin: 27px 0 17px;
+
+    color: #94a3b8;
+
+    font-size: 12px;
+}
+
+
+.login-divider::before,
+.login-divider::after {
+    content: "";
+
+    height: 1px;
+
+    flex: 1;
+
+    background: #e5e7eb;
+}
+
+
+.signup-link {
+    height: 47px;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    gap: 9px;
+
+    border: 1px solid #d9dee5;
+
+    border-radius: 10px;
+
+    text-decoration: none;
+
+    color: #101827;
+
+    font-size: 13px;
+
+    font-weight: 600;
+
+    transition: all 0.25s ease;
+}
+
+
+.signup-link:hover {
+    border-color: #101827;
+
+    background: #f8fafc;
+
+    transform: translateY(-1px);
+}
+
+
+.signup-link i {
+    color: #ef4444;
+}
+
+
+/* =========================================================
+   SECURITY NOTE
+   ========================================================= */
+
+.login-note {
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    gap: 7px;
+
+    color: #94a3b8;
+
+    font-size: 11px;
+
+    margin: 22px 0 0;
+}
+
+
+.login-note i {
+    color: #64748b;
+}
+
+
+/* =========================================================
+   RESPONSIVE DESIGN
+   ========================================================= */
+
+@media (max-width: 800px) {
+
+    .login-card {
+        grid-template-columns: 1fr;
+
+        width: 500px;
+    }
+
+    .login-brand {
+        padding: 35px 35px;
+
+        min-height: 300px;
+    }
+
+    .login-brand > p {
+        margin-bottom: 22px;
+    }
+
+    .brand-feature {
+        display: grid;
+
+        grid-template-columns: 1fr 1fr;
+    }
+
+    .login-form-section {
+        padding: 40px 35px;
+    }
+
+}
+
+
+@media (max-width: 500px) {
+
+    .login-page {
+        padding: 25px 15px;
+    }
+
+    .login-brand {
+        padding: 30px 25px;
+    }
+
+    .login-form-section {
+        padding: 35px 25px;
+    }
+
+    .login-brand h1 {
+        font-size: 30px;
+    }
+
+    .login-brand h2 {
+        font-size: 22px;
+    }
+
+    .login-heading h2 {
+        font-size: 25px;
+    }
+
+    .brand-feature {
+        grid-template-columns: 1fr;
+    }
+
+}
+
+/* =========================================
+   MY ORDERS PAGE
+========================================= */
+
+.orders-page {
+    width: 100%;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 55px 35px 80px;
+    box-sizing: border-box;
+}
+
+
+/* =========================================
+   HEADER
+========================================= */
+
+.orders-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end;
+    gap: 30px;
+    margin-bottom: 40px;
+}
+
+.orders-label {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+
+    font-size: 13px;
+    font-weight: 700;
+    letter-spacing: 1.5px;
+
+    color: #6b7280;
+
+    margin-bottom: 10px;
+}
+
+.orders-header h1 {
+    margin: 0;
+
+    font-size: 42px;
+    font-weight: 800;
+
+    color: #111827;
+}
+
+.orders-header p {
+    margin-top: 10px;
+
+    font-size: 16px;
+    color: #6b7280;
+}
+
+
+/* =========================================
+   CONTINUE SHOPPING BUTTON
+========================================= */
+
+.orders-shop-btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 9px;
+
+    padding: 13px 20px;
+
+    background: #111827;
+    color: white;
+
+    text-decoration: none;
+
+    border-radius: 10px;
+
+    font-size: 14px;
+    font-weight: 700;
+
+    transition: 0.25s ease;
+}
+
+.orders-shop-btn:hover {
+    background: #1f2937;
+    transform: translateY(-2px);
+}
+
+
+/* =========================================
+   ORDERS LIST
+========================================= */
+
+.orders-list {
+    display: flex;
+    flex-direction: column;
+    gap: 22px;
+}
+
+
+/* =========================================
+   ORDER CARD
+========================================= */
+
+.order-card {
+    background: white;
+
+    border: 1px solid #e5e7eb;
+
+    border-radius: 18px;
+
+    padding: 25px 28px;
+
+    box-shadow: 0 5px 20px rgba(0, 0, 0, 0.05);
+
+    transition: 0.25s ease;
+}
+
+.order-card:hover {
+    transform: translateY(-3px);
+
+    box-shadow: 0 12px 30px rgba(0, 0, 0, 0.09);
+}
+
+
+/* =========================================
+   ORDER TOP
+========================================= */
+
+.order-top {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.order-number {
+    display: flex;
+    align-items: center;
+    gap: 14px;
+}
+
+.order-icon {
+    width: 48px;
+    height: 48px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    background: #f3f4f6;
+
+    color: #111827;
+
+    border-radius: 12px;
+
+    font-size: 19px;
+}
+
+.small-label {
+    display: block;
+
+    font-size: 11px;
+
+    letter-spacing: 1.2px;
+
+    color: #9ca3af;
+
+    font-weight: 700;
+}
+
+.order-number h2 {
+    margin: 3px 0 0;
+
+    font-size: 21px;
+
+    color: #111827;
+}
+
+
+/* =========================================
+   STATUS
+========================================= */
+
+.status {
+    display: inline-flex;
+    align-items: center;
+    gap: 7px;
+
+    padding: 8px 13px;
+
+    border-radius: 30px;
+
+    font-size: 13px;
+
+    font-weight: 700;
+}
+
+.status.processing {
+    background: #fff7ed;
+    color: #c2410c;
+}
+
+.status.shipped {
+    background: #eff6ff;
+    color: #2563eb;
+}
+
+.status.delivered {
+    background: #ecfdf5;
+    color: #059669;
+}
+
+
+/* =========================================
+   DIVIDER
+========================================= */
+
+.order-divider {
+    height: 1px;
+
+    background: #eeeeee;
+
+    margin: 22px 0;
+}
+
+
+/* =========================================
+   ORDER INFORMATION
+========================================= */
+
+.order-info {
+    display: grid;
+
+    grid-template-columns:
+        repeat(3, 1fr);
+
+    gap: 25px;
+}
+
+.order-info-item {
+    display: flex;
+    align-items: center;
+
+    gap: 13px;
+}
+
+.order-info-item > i {
+    width: 40px;
+    height: 40px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    background: #f8fafc;
+
+    color: #374151;
+
+    border-radius: 10px;
+
+    font-size: 16px;
+}
+
+.order-info-item span {
+    display: block;
+
+    font-size: 12px;
+
+    color: #9ca3af;
+
+    margin-bottom: 4px;
+}
+
+.order-info-item strong {
+    display: block;
+
+    font-size: 15px;
+
+    color: #111827;
+}
+
+.order-price {
+    font-size: 18px !important;
+}
+
+
+/* =========================================
+   ORDER BOTTOM
+========================================= */
+
+.order-bottom {
+    margin-top: 23px;
+
+    padding-top: 18px;
+
+    border-top: 1px solid #eeeeee;
+}
+
+.order-message {
+    display: flex;
+    align-items: center;
+
+    gap: 8px;
+
+    font-size: 13px;
+
+    color: #6b7280;
+}
+
+.order-message i {
+    color: #111827;
+}
+
+
+/* =========================================
+   EMPTY ORDERS
+========================================= */
+
+.empty-orders {
+    background: white;
+
+    border: 1px solid #e5e7eb;
+
+    border-radius: 20px;
+
+    padding: 80px 30px;
+
+    text-align: center;
+
+    box-shadow: 0 5px 20px rgba(0, 0, 0, 0.04);
+}
+
+.empty-orders-icon {
+    width: 85px;
+    height: 85px;
+
+    margin: 0 auto 22px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    border-radius: 50%;
+
+    background: #f3f4f6;
+
+    color: #374151;
+
+    font-size: 34px;
+}
+
+.empty-orders h2 {
+    margin: 0;
+
+    font-size: 28px;
+
+    color: #111827;
+}
+
+.empty-orders p {
+    max-width: 500px;
+
+    margin: 12px auto 28px;
+
+    line-height: 1.7;
+
+    color: #6b7280;
+
+    font-size: 15px;
+}
+
+
+/* =========================================
+   START SHOPPING
+========================================= */
+
+.start-shopping-btn {
+    display: inline-flex;
+
+    align-items: center;
+
+    gap: 9px;
+
+    padding: 13px 22px;
+
+    background: #111827;
+
+    color: white;
+
+    text-decoration: none;
+
+    border-radius: 10px;
+
+    font-size: 14px;
+
+    font-weight: 700;
+
+    transition: 0.25s ease;
+}
+
+.start-shopping-btn:hover {
+    background: #1f2937;
+
+    transform: translateY(-2px);
+}
+
+
+/* =========================================
+   RESPONSIVE
+========================================= */
+
+@media (max-width: 800px) {
+
+    .orders-page {
+        padding: 35px 18px 60px;
+    }
+
+    .orders-header {
+        flex-direction: column;
+
+        align-items: flex-start;
+    }
+
+    .orders-header h1 {
+        font-size: 34px;
+    }
+
+    .order-info {
+        grid-template-columns: 1fr;
+        gap: 18px;
+    }
+
+    .order-top {
+        align-items: flex-start;
+
+        gap: 15px;
+    }
+
+}
+
+@media (max-width: 500px) {
+
+    .order-card {
+        padding: 20px;
+    }
+
+    .order-top {
+        flex-direction: column;
+    }
+
+    .orders-shop-btn {
+        width: 100%;
+
+        justify-content: center;
+    }
+
+    .orders-header h1 {
+        font-size: 30px;
+    }
+
+}
+
+/* ============================= */
+/* ORDER CONFIRMATION STATUS */
+/* ============================= */
+
+.order-confirmed {
+    display: inline-flex;
+    align-items: center;
+    gap: 7px;
+
+    padding: 8px 15px;
+
+    background: #eaf8ef;
+    color: #198754;
+
+    border-radius: 20px;
+
+    font-size: 13px;
+    font-weight: 700;
+}
+
+.order-confirmed i {
+    font-size: 14px;
+}
+
+.order-success-message {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+
+    margin-top: 18px;
+
+    color: #198754;
+
+    font-size: 14px;
+    font-weight: 600;
+}
+
+.order-success-message i {
+    font-size: 15px;
+}
+
+/* ================================= */
+/*        CASEX WISHLIST PAGE        */
+/* ================================= */
+
+.wishlist-page {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 55px 35px 80px;
+}
+
+
+/* Wishlist Heading */
+
+.wishlist-header {
+    margin-bottom: 35px;
+}
+
+.wishlist-label {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+
+    font-size: 13px;
+    font-weight: 700;
+
+    letter-spacing: 1.5px;
+
+    color: #6b7280;
+
+    margin-bottom: 10px;
+}
+
+.wishlist-label i {
+    color: #ef4444;
+}
+
+.wishlist-header h1 {
+    margin: 0;
+
+    font-size: 42px;
+    font-weight: 800;
+
+    color: #111827;
+}
+
+.wishlist-header p {
+    margin-top: 10px;
+
+    color: #6b7280;
+
+    font-size: 16px;
+}
+
+
+/* ================================= */
+/*       WISHLIST PRODUCT GRID       */
+/* ================================= */
+
+.wishlist-grid {
+    display: grid;
+
+    grid-template-columns: repeat(
+        auto-fit,
+        minmax(280px, 1fr)
+    );
+
+    gap: 28px;
+
+    width: 100%;
+}
+
+
+/* Product Card */
+
+.wishlist-card {
+    background: #ffffff;
+
+    border-radius: 18px;
+
+    overflow: hidden;
+
+    border: 1px solid #e5e7eb;
+
+    box-shadow: 0 8px 25px rgba(15, 23, 42, 0.08);
+
+    transition:
+        transform 0.25s ease,
+        box-shadow 0.25s ease;
+}
+
+.wishlist-card:hover {
+    transform: translateY(-5px);
+
+    box-shadow:
+        0 15px 35px rgba(15, 23, 42, 0.13);
+}
+
+
+/* Product Image */
+
+.wishlist-image {
+    position: relative;
+
+    width: 100%;
+    height: 300px;
+
+    background: #f8f8f8;
+
+    overflow: hidden;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.wishlist-image img {
+    width: 100%;
+    height: 100%;
+
+    object-fit: contain;
+
+    display: block;
+
+    transition: transform 0.35s ease;
+}
+
+.wishlist-card:hover .wishlist-image img {
+    transform: scale(1.03);
+}
+
+
+/* Heart Icon */
+
+.wishlist-heart {
+    position: absolute;
+
+    top: 15px;
+    right: 15px;
+
+    width: 40px;
+    height: 40px;
+
+    display: flex;
+
+    align-items: center;
+    justify-content: center;
+
+    background: white;
+
+    border-radius: 50%;
+
+    box-shadow: 0 4px 12px rgba(0,0,0,0.12);
+
+    color: #ef4444;
+
+    font-size: 16px;
+}
+
+
+/* ================================= */
+/*        PRODUCT INFORMATION        */
+/* ================================= */
+
+.wishlist-info {
+    padding: 22px;
+}
+
+.wishlist-brand {
+    margin: 0 0 7px;
+
+    color: #6b7280;
+
+    font-size: 12px;
+
+    font-weight: 700;
+
+    text-transform: uppercase;
+
+    letter-spacing: 1px;
+}
+
+.wishlist-info h2 {
+    margin: 0;
+
+    color: #111827;
+
+    font-size: 20px;
+
+    font-weight: 700;
+
+    min-height: 28px;
+}
+
+.wishlist-price {
+    margin-top: 12px;
+
+    font-size: 23px;
+
+    font-weight: 800;
+
+    color: #159447;
+}
+
+
+/* ================================= */
+/*            BUTTONS                */
+/* ================================= */
+
+.wishlist-actions {
+    display: flex;
+
+    gap: 10px;
+
+    margin-top: 20px;
+}
+
+.wishlist-view-btn,
+.wishlist-remove-btn {
+    flex: 1;
+
+    display: flex;
+
+    align-items: center;
+    justify-content: center;
+
+    gap: 7px;
+
+    padding: 11px 12px;
+
+    border-radius: 9px;
+
+    text-decoration: none;
+
+    font-size: 13px;
+
+    font-weight: 700;
+
+    transition:
+        background 0.2s ease,
+        transform 0.2s ease;
+}
+
+
+/* View Product */
+
+.wishlist-view-btn {
+    background: #111827;
+
+    color: white;
+}
+
+.wishlist-view-btn:hover {
+    background: #1f2937;
+
+    transform: translateY(-2px);
+}
+
+
+/* Remove */
+
+.wishlist-remove-btn {
+    background: #fff1f2;
+
+    color: #dc2626;
+
+    border: 1px solid #fecdd3;
+}
+
+.wishlist-remove-btn:hover {
+    background: #fee2e2;
+
+    transform: translateY(-2px);
+}
+
+
+/* ================================= */
+/*          EMPTY WISHLIST           */
+/* ================================= */
+
+.wishlist-empty {
+    margin-top: 30px;
+}
+
+
+/* ================================= */
+/*          MOBILE VIEW              */
+/* ================================= */
+
+@media (max-width: 700px) {
+
+    .wishlist-page {
+        padding: 35px 20px 60px;
+    }
+
+    .wishlist-header h1 {
+        font-size: 32px;
+    }
+
+    .wishlist-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .wishlist-image {
+        height: 260px;
+    }
 
 }
